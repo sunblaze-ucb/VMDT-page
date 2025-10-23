@@ -186,54 +186,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>VMDT: Decoding the Trustworthiness of Video Foundation Models</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>VMDT: Decoding the Trustworthiness of Video Foundation Models</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -323,76 +275,29 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
+<!-- Example image -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
+	<h2 class="title is-3">Examples</h2>
+      <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="static/images/vmdt-main.png" alt="Examples" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Examples of untrustworthy model responses for each perspective
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
 </div>
 </div>
 </section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
+<!-- End example image -->
 
 <!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
+      <h2 class="title is-3">Each Aspect and Findings</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <!-- TODO: Add poster image for better preview -->
@@ -421,27 +326,182 @@
 </section>
 <!-- End video carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
+<!-- leaderboard -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
+      <h2 class="title">Leaderboard</h2>
 
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+      <!-- Leaderboard table (replaces the PDF iframe) -->
+<style>
+  /* keep styles local to this section */
+  .leaderboard-table .blue { color: #2563eb; font-weight: 600; }   /* Bulma-ish blue */
+  .leaderboard-table .red  { color: #dc2626; font-weight: 600; }   /* Bulma-ish red  */
+  .leaderboard-table caption { caption-side: top; text-align: left; font-weight: 600; }
+  .leaderboard-table small { color: #6b7280; }
+</style>
+
+<div class="table-container leaderboard-table">
+  <table class="table is-striped is-hoverable is-fullwidth is-narrow">
+    <caption>
+      Trustworthiness profiles for each model across five perspectives.
+      <small>(Best average in <span class="blue">blue</span>, worst in <span class="red">red</span> where indicated.)</small>
+    </caption>
+    <thead>
+      <tr>
+        <th>Model Type</th>
+        <th>Model Family</th>
+        <th>Model Name</th>
+        <th>Safety</th>
+        <th>Hallucination</th>
+        <th>Fairness</th>
+        <th>Privacy</th>
+        <th>Adv Robustness</th>
+        <th>Average</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- T2V -->
+      <tr>
+        <td rowspan="7">T2V</td>
+        <td>VideoCrafter</td>
+        <td>VideoCrafter2</td>
+        <td>76.2</td><td>35.7</td><td>60.5</td><td>65.7</td><td>50.9</td><td>57.8</td>
+      </tr>
+      <tr>
+        <td>CogVideoX</td>
+        <td class="red">CogVideoX-5B</td>
+        <td class="red">64.1</td><td class="red">37.8</td><td class="red">59.5</td>
+        <td class="red">66.2</td><td class="red">50.9</td><td class="red">55.7</td>
+      </tr>
+      <tr>
+        <td>OpenSora</td>
+        <td>OpenSora 1.2</td>
+        <td>66.8</td><td>37.1</td><td>54.6</td><td>65.8</td><td>59.3</td><td>56.72</td>
+      </tr>
+      <tr>
+        <td>Vchitect</td>
+        <td>Vchitect-2.0</td>
+        <td>67.4</td><td>49.0</td><td>62.2</td><td>65.8</td><td>64.0</td><td>61.68</td>
+      </tr>
+      <tr>
+        <td>Luma</td>
+        <td class="blue">Luma</td>
+        <td class="blue">83.3</td><td class="blue">67.6</td><td class="blue">57.3</td>
+        <td class="blue">65.1</td><td class="blue">77.2</td><td class="blue">70.1</td>
+      </tr>
+      <tr>
+        <td>Pika</td>
+        <td>Pika</td>
+        <td>59.9</td><td>63.0</td><td>51.84</td><td>64.4</td><td>71.0</td><td>62.028</td>
+      </tr>
+      <tr>
+        <td>Nova</td>
+        <td>Nova Reel</td>
+        <td>90.4</td><td>45.9</td><td>62.06</td><td>66.4</td><td>75.4</td><td>68.032</td>
+      </tr>
+
+      <!-- V2T -->
+      <tr>
+        <td rowspan="19">V2T</td>
+        <td rowspan="7">InternVL2.5</td>
+        <td>InternVL2.5-1B</td>
+        <td>54.1</td><td>38.2</td><td>82.0</td><td>89.1</td><td>72.1</td><td>67.1</td>
+      </tr>
+      <tr>
+        <td>InternVL2.5-2B</td>
+        <td>50.6</td><td>47.3</td><td>76.7</td><td>82.6</td><td>77.3</td><td>66.9</td>
+      </tr>
+      <tr>
+        <td>InternVL2.5-4B</td>
+        <td>46.1</td><td>52.3</td><td>76.0</td><td>82.4</td><td>80.5</td><td>67.46</td>
+      </tr>
+      <tr>
+        <td>InternVL2.5-8B</td>
+        <td>47.5</td><td>51.8</td><td>82.1</td><td>77.9</td><td>84.4</td><td>68.74</td>
+      </tr>
+      <tr>
+        <td>InternVL2.5-26B</td>
+        <td>50.6</td><td>60.4</td><td>78.6</td><td>75.5</td><td>86.2</td><td>70.26</td>
+      </tr>
+      <tr>
+        <td>InternVL2.5-38B</td>
+        <td>47.9</td><td>64.4</td><td>79.2</td><td>73.6</td><td>89.6</td><td>70.94</td>
+      </tr>
+      <tr>
+        <td class="blue">InternVL2.5-78B</td>
+        <td class="blue">52.7</td><td class="blue">66.0</td><td class="blue">84.5</td>
+        <td class="blue">69.4</td><td class="blue">91.1</td><td class="blue">72.74</td>
+      </tr>
+
+      <tr>
+        <td rowspan="3">Qwen2.5-VL</td>
+        <td class="red">Qwen2.5-VL-3B-Instruct</td>
+        <td class="red">52.0</td><td class="red">47.0</td><td class="red">78.0</td>
+        <td class="red">75.0</td><td class="red">74.7</td><td class="red">65.34</td>
+      </tr>
+      <tr>
+        <td>Qwen2.5-VL-7B-Instruct </td>
+        <td>64.0</td><td>48.5</td><td>81.4</td><td>71.4</td><td>74.4</td><td>67.94</td>
+      </tr>
+      <tr>
+        <td>Qwen2.5-VL-72B-Instruct </td>
+        <td>53.2</td><td>57.2</td><td>85.5</td><td>57.0</td><td>79.1</td><td>66.4</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">VideoLLaMA2</td>
+        <td>VideoLLaMA2.1-7B</td>
+        <td>52.6</td><td>38.3</td><td>80.6</td><td>85.0</td><td>71.7</td><td>65.64</td>
+      </tr>
+      <tr>
+        <td>VideoLLaMA2-72B</td>
+        <td>51.8</td><td>46.4</td><td>79.4</td><td>100.0</td><td>77.4</td><td>71.0</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">LLaVA-Video</td>
+        <td>LLaVA-Video-7B-Qwen2</td>
+        <td>49.1</td><td>43.9</td><td>82.3</td><td>90.7</td><td>67.7</td><td>66.74</td>
+      </tr>
+      <tr>
+        <td>LLaVA-Video-72B-Qwen2</td>
+        <td>48.9</td><td>51.1</td><td>86.6</td><td>79.5</td><td>76.5</td><td>68.52</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">GPT</td>
+        <td>GPT-4o-mini</td>
+        <td>80.9</td><td>50.4</td><td>79.4</td><td>61.6</td><td>75.4</td><td>69.54</td>
+      </tr>
+      <tr>
+        <td>GPT-4o</td>
+        <td>86.5</td><td>57.7</td><td>86.5</td><td>39.4</td><td>80.6</td><td>70.14</td>
+      </tr>
+
+      <tr>
+        <td>Claude</td>
+        <td>Claude-3.5-Sonnet</td>
+        <td>98.6</td><td>53.3</td><td>83.6</td><td>42.6</td><td>71.7</td><td>69.96</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2">Nova</td>
+        <td>Nova Lite</td>
+        <td>76.5</td><td>41.2</td><td>77.7</td><td>63.6</td><td>68.5</td><td>65.5</td>
+      </tr>
+      <tr>
+        <td>Nova Pro</td>
+        <td>78.7</td><td>43.6</td><td>78.5</td><td>85.0</td><td>71.0</td><td>71.36</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
         
       </div>
     </div>
   </section>
-<!--End paper poster -->
-
-
+<!--End leaderboard -->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
@@ -453,12 +513,11 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@article{potter2025vmdt,
+  title={VMDT: Decoding the Trustworthiness of Video Foundation Models},
+  author = {Potter, Yujin and Wang, Zhun and Crispino, Nicholas and Montgomery, Kyle and Xiong, Alexander and Chang, Ethan Y. and Pinto, Francesco and Chen, Yuqi and Gupta, Rahul and Ziyadi, Morteza and Christodoulopoulos, Christos and Li, Bo and Wang, Chenguang and Song, Dawn},
+  journal={Advances in Neural Information Processing Systems},
+  year={2025}
 }</code></pre>
     </div>
 </section>
@@ -473,8 +532,6 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
