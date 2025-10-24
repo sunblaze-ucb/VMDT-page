@@ -299,26 +299,131 @@
     <div class="container">
       <h2 class="title is-3">Each Aspect and Findings</h2>
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+        <div class="item content-1">
+          <div class="content">
+		  <h3 class="subtitle">Safety</h3>
+            <div class="columns is-vcentered">
+			  <!-- Image column -->
+			  <div class="column is-half">
+				<figure class="image is-3by3">
+				  <img src="static/images/safety.png" alt="safety" loading="lazy" />
+				</figure>
+				<figcaption class="has-text-centered is-size-7">
+				<br>
+					Average harmful content generation rate (HGR) for evaluating the safety of V2T models. Different model families are represented by distinct colors.
+				  </figcaption>
+			  </div>
+
+			  <!-- Text column -->
+			  <div class="column is-half">
+				<p>
+				  We construct a comprehensive safety evaluation dataset comprising 780 prompts for T2V models and 990 prompts for V2T models, spanning 13 and 27 risk categories, respectively.
+				  Our risk taxonomy is grounded in established industry policies and benchmarks, while also addressing the unique characteristics of the video modality such as temporal and physical harm risks that cannot be detected in static frames.
+				  We design novel scenarios to test the performance of models under diverse conditions, including transformed instructions, synthetic content, and real-world content.
+				  Our evaluation and analysis reveal several critical findings:
+				  (1) Open-source T2V models universally lack safety refusal mechanisms, while even closed-source models struggle with video-specific risks like temporal and physical harm.
+				  (2) T2V models generate less harmful content in transformed scenarios, likely reflecting capability limitations rather than improved safety.
+				  (3) A substantial safety gap exists between open and closed-source V2T models, with all open-source variants demonstrating significantly higher harmful content generation rates.
+				  (4) Closed-source V2T models like Claude and GPT exhibit better safety overall but remain particularly vulnerable to fraud and deception risks, highlighting critical alignment gaps across all VFMs.
+				</p>
+			  </div>
+			  </div>
+          </div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+		
+		<div class="item content-2">
+          <div class="content">
+		  <h3 class="subtitle">Hallucination</h3>
+            <div class="columns is-vcentered">
+			  <!-- Image column -->
+			  <div class="column is-half">
+				<figure class="image is-3by3">
+				  <img src="static/images/hallucination.png" alt="hallucination" loading="lazy" />
+				  <figcaption class="has-text-centered is-size-7">
+					Average accuracy of V2T models over all hallucination scenarios as a function of model size. Different model families are represented by distinct colors. Within model families, performance tends to increase as model size increases.
+				  </figcaption>
+				</figure>
+			  </div>
+
+			  <!-- Text column -->
+			  <div class="column is-half">
+			<p>
+              We construct a diverse dataset comprising 1,650 prompts for T2V models and 1,218 prompts for V2T models with the aim of measuring hallucination under different scenarios. 
+			Our hallucination dataset incorporates various scenarios including naturally difficult prompts, distraction, misleading, counterfactual reasoning, temporal activities, and OCR.
+			We evaluate these scenarios across a set of tasks focusing on objects, attributes, actions, counting, and spatial understanding, as well as a scene understanding task for V2T. 
+			Our analysis reveals the following: 1) For T2V, all evaluated open-source models hallucinate significantly more than closed-source models, Luma and Pika, in nearly all scenarios. 2) Object recognition is the easiest task for T2V models, while OCR presents one of the most challenging scenarios. This aligns with the hallucination results observed in text-to-image (T2I) models, suggesting that T2V and T2I models share common challenges. 3) Within the same model class, an increase in V2T model size is associated with a decrease in hallucination. 4) For V2T models, we find the best-performing model on average is InternVL2.5-78B, an open-source model, which is the opposite of what is seen in T2V models.
+            </p>
+			</div>
+			</div>
+          </div>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+        <div class="item content-3">
+          <div class="content">
+		  <h3 class="subtitle">Fairness</h3>
+		  <div class="columns is-vcentered">
+			  <!-- Image column -->
+			  <div class="column is-half">
+				<figure class="image is-4by3">
+				  <img src="static/images/fairness.png" alt="fairness" loading="lazy" />
+				  <figcaption class="has-text-centered is-size-7">
+					Age stereotype score of V2T models by size. The scores range from -1 to 1, where positive values indicate stereotypes associating older people with higher socioeconomic status, negative values associate younger people with higher status, and 0 represents perfect fairness. The figure shows larger models demonstrate stronger stereotypical associations between older age and higher socioeconomic status. Model families are distinguished by color.
+				  </figcaption>
+				</figure>
+			  </div>
+
+			  <!-- Text column -->
+			  <div class="column is-half">
+            <p>
+              We construct an extensive dataset comprising 1,086 prompts for T2V models and 5,008 prompts for V2T models. This fairness dataset aims to assess model fairness across various contexts, including social stereotypes (e.g., occupation) and decision-making scenarios (e.g., hiring). We also examine "overkill fairness," where models sacrifice factual/historical accuracy in pursuit of diversity (e.g., generating videos of Black female Founding Fathers). Our evaluation reveals several significant findings: 1) T2V models exhibit substantial overrepresentation towards males, White individuals, and younger people, while demonstrating some degree of overkill fairness. 2) This overrepresentation surpasses that of T2I models, yet shows lower levels of overkill fairness, suggesting a trade-off between these two dimensions. 3) V2T model fairness demonstrates a significant negative correlation with model size, with larger models exhibiting increased unfairness. 4) All V2T models show significant overkill fairness, generating historically inaccurate outputs to promote diversity.
+            </p>
+			</div>
+			</div>
+          </div>
+        </div>
+		<div class="item content-4">
+          <div class="content">
+		  <h3 class="subtitle">Privacy</h3>
+		  <div class="columns is-vcentered">
+			  <!-- Image column -->
+			  <div class="column is-half">
+				<figure class="image is-3by3">
+				  <img src="static/images/privacy.png" alt="privacy" loading="lazy" />
+				  <figcaption class="has-text-centered is-size-7">
+					A scatter plot between location inference accuracy and model size. This suggests that larger models generally demonstrate greater precision in identifying specific locations, indicating elevated privacy risks.
+				  </figcaption>
+				</figure>
+			  </div>
+
+			  <!-- Text column -->
+			  <div class="column is-half">
+            <p>
+               We construct a balanced dataset of 1,000 text prompts for T2V models and 200 video samples for V2T models to evaluate the privacy memorization and extractive capabilities, respectively. Our T2V dataset comprises text prompts sampled from a pretraining corpus (i.e., caption-video pairs) used for most contemporary T2V models. Our V2T dataset comprises driving scene videos along with their location information (e.g., zip code) to evaluate inference capabilities to predict sensitive location data. Our evaluation results reveal the following:
+				1) T2V models generally exhibit weak data memorization.
+				2) However, we observe that the T2V VideoCrafter2 model sometimes includes watermarks from copyrighted training data in its generated videos, indicating some level of data memorization does occur.
+				3) Larger V2T models tend to demonstrate stronger location inference, suggesting that privacy risks increase as model size increases. 
+            </p>
+			</div>
+			</div>
+          </div>
+        </div>
+		<div class="item content-5">
+          <div class="content">
+		  <h3 class="subtitle">Adversarial Robustness</h3>
+            <figure class="image">
+				  <img src="static/images/adv_robustness.png" alt="adv" loading="lazy" />
+				  <figcaption class="has-text-centered is-size-7">
+					Left: Overall benign accuracy as a function of model size. Middle: Overall robust accuracy as a function of model size. Right: Overall performance drop (benign - adversarial) as a function of
+					model size.
+				  </figcaption>
+				</figure>
+			<p><br>
+              We construct a challenging dataset to assess the robustness of T2V and V2T models to adversarial inputs. Our dataset contains 329 prompts for T2V models and 1,523 prompts for V2T models across five tasks: action recognition, attribute recognition, counting, object recognition, and spatial understanding. By attacking selected T2V and V2T surrogate models, we adversarially optimize the inputs. Our findings reveal several important insights. 
+				1) Both T2V and V2T models are vulnerable to adversarial inputs.
+				2) Among our five tasks, counting and spatial understanding pose the greatest challenge for both T2V and V2T models. 
+				3) The performance gap between open and closed-source T2V models is larger than that of V2T models. 
+				4) Within the same V2T model class, larger models generally demonstrate greater robustness to adversarial inputs than their smaller counterparts.
+            </p>
+          </div>
         </div>
       </div>
     </div>
